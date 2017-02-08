@@ -61,13 +61,13 @@ $(document).ready(function(){
     }
     $("input[name='editorialbusqueda']").keyup(libroseditorial);
     function libroseditorial(){
-    	$("tbody.libroseditorial").text("");
     	var editorial = $("input[name='editorialbusqueda']").val();
     	$.ajax({
     		type: "POST",
     		url: "http://www.ayas.hol.es/server/libroseditorial.php",
     		data: ({EDITORIAL:editorial}),
     		success: function(data){
+    			$("tbody.libroseditorial").text("");
     			$("#tablaeditorial").css("visibility", "visible");
     			$.each(data, function(i, val){
     				$("tbody.libroseditorial").append("<tr><td class='titulo'>"+val.TITULO+"</td><td>"+val.AUTOR+"</td><td>"+val.ANOPUBLICACION+"</td><td>"+val.PAGINAS+"</td><td>"+val.ISBN+"</td></tr>");
