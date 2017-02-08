@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css" media="screen">
+	.titulo{
+		background-color: #9C1212;
+	}
+	#tablaautor, #tablaeditorial{
+		visibility: hidden;
+	}
+
+</style>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="code.js"></script>
+</head>
+<body>
+<!--MENU PRINCIPAL-->
+<div data-role="page" id="page1" data-theme="b">
+  <div data-role="header">
+    <h1>Biblioteca v0.1</h1>
+  </div>
+  <div data-role="main" class="ui-content">
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#page2" data-transition="flow">Insertar libro</a></li>
+      <li><a href="#page3" data-transition="flow">Listar libros</a></li>
+      <li><a href="#page4" data-transition="flow">Búsqueda por autor</a></li>
+      <li><a href="#page5" data-transition="flow">Búsqueda por editorial</a></li>
+    </ul>
+  </div>
+  <div data-role="footer">
+    <h1>Copyright Ayas 2017</h1>
+  </div>
+</div> 
+<!--PAGINA 2-->
+<div data-role="page" id="page2" data-theme="b">
+	<div data-role="header">
+		<h1>Insertar libro</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+	<a href="#page1" class="ui-btn" data-transition="flow">Volver</a>
+		<form method="post" action="">
+			<div class="ui-field-contain">
+				<label for="cdu">CDU</label>
+				<input type="text" name="cdu" id="cdu">
+
+				<label for="titulo">TITULO</label>
+				<input type="text" name="titulo" id="titulo">
+
+				<label for="autor">AUTOR</label>
+				<input type="text" name="autor" id="autor">
+
+				<label for="ANIO">AÑO</label>
+				<input type="number" name="anio" id="anio">
+
+				<label for="editorial">EDITORIAL</label>
+				<input type="text" name="editorial" id="editorial">
+
+				<label for="paginas">Nº DE PAGINAS</label>
+				<input type="number" name="paginas" id="paginas">
+
+				<label for="isbn">ISBN</label>
+				<input type="text" name="isbn" id="isbn">
+			</div>
+			<input type="submit" name="" id="insertar" class="ui-btn" value="Enviar">
+			
+		</form>
+		
+	</div>
+	<div data-role="footer">
+    	<h1>Copyright Ayas 2017</h1>
+  	</div>
+</div>
+<!-- PAGINA 3-->
+<div data-role="page" id="page3" data-theme="b">
+	<div data-role="header">
+		<h1>Listado de libros</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+	<a href="#page1" class="ui-btn" data-transition="flow">Volver</a>
+		<table data-role="table" class="ui-responsive" border="1">
+		<thead>
+			<tr>
+				<th>TITULO</th><th>AUTOR</th><th>AÑO</th><th>EDITORIAL</th><th>Nº DE PAGINAS</th><th>ISBN</th>
+			</tr>
+		</thead>
+		<tbody class="listalibros">
+				
+		</tbody>
+		</table>
+	</div>
+	<div data-role="footer">
+    	<h1>Copyright Ayas 2017</h1>
+  	</div>
+</div>
+<!--PAGINA 4-->
+<div data-role="page" id="page4" data-theme="b">
+	<div data-role="header">
+		<h1>Busqueda por autor</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+	<a href="#page1" class="ui-btn" data-transition="flow">Volver</a>
+		<fieldset class="ui-field-contain">
+			<label for="autores">Selecciona autor</label>
+			<select name="autores">
+				
+			</select>
+		</fieldset>
+		<table data-role="table" class="ui-responsive" border="1" id="tablaautor">
+		<thead>
+			<tr>
+				<th>TITULO</th><th>AÑO</th><th>EDITORIAL</th><th>Nº DE PAGINAS</th><th>ISBN</th>
+			</tr>
+		</thead>
+		<tbody class="librosautor">
+				
+		</tbody>
+		</table>
+	
+	</div>
+	<div data-role="footer">
+    	<h1>Copyright Ayas 2017</h1>
+  	</div>
+</div>
+<!--PAGINA 5-->
+<div data-role="page" id="page5" data-theme="b">
+	<div data-role="header">
+		<h1>Búsqueda por editorial</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+	<a href="#page1" class="ui-btn" data-transition="flow">Volver</a>
+	<fieldset class="ui-field-contain">
+		<label for="editorialbusqueda">Editorial a buscar</label>
+		<input type="text" name="editorialbusqueda">
+	</fieldset>
+	<table data-role="table" class="ui-responsive" border="1" id="tablaeditorial">
+		<thead>
+			<tr>
+				<th>TITULO</th><th>AUTOR</th><th>AÑO</th><th>Nº DE PAGINAS</th><th>ISBN</th>
+			</tr>
+		</thead>
+		<tbody class="libroseditorial">
+				
+		</tbody>
+		</table>
+	</div>
+	<div data-role="footer">
+    	<h1>Copyright Ayas 2017</h1>
+  	</div>
+</div>
+
+</body>
+</html>
